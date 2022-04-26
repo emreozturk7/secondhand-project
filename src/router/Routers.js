@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Login from '../pages/ChallengePage';
-import Register from '../pages/FirstPage';
+import Login from '../pages/login/Login';
+import Register from '../pages/register/Register';
 
 function Router() {
   return (

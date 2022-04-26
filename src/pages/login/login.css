@@ -1,0 +1,105 @@
+body {
+    background-color: #FBFBFB;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-register-image {
+    width: 42.5%;
+}
+
+.login-area {}
+
+.logo {}
+
+.login-area-container {}
+
+.sign-in-title {
+    color: var(--unnamed-color-525252);
+    text-align: center;
+    font: normal normal bold 32px/43px Nunito;
+    letter-spacing: 0px;
+    color: #525252;
+    opacity: 1;
+}
+
+.sign-in-subtitle {
+    color: var(--unnamed-color-525252);
+    text-align: center;
+    font: normal normal normal 15px/20px Nunito;
+    letter-spacing: 0px;
+    color: #525252;
+    opacity: 1;
+}
+
+.sign-in-form {}
+
+.sign-in-email-container {}
+
+.input-name {
+    color: var(--unnamed-color-525252);
+    text-align: center;
+    font: normal normal normal 15px/20px Nunito;
+    letter-spacing: 0px;
+    color: #525252;
+    opacity: 1;
+}
+
+.input-box {
+
+    top: 481px;
+    left: 1175px;
+    width: 389px;
+    height: 45px;
+    /* UI Properties */
+    background: var(--unnamed-color-f0f8ff) 0% 0% no-repeat padding-box;
+    border: 1px solid var(--unnamed-color-4b9ce2);
+    background: #F0F8FF 0% 0% no-repeat padding-box;
+    border: 1px solid #4B9CE2;
+    border-radius: 8px;
+    opacity: 1;
+}
+
+.sign-in-password-container {}
+
+.forgot-password {
+    color: var(--unnamed-color-b1b1b1);
+    text-align: right;
+    font: normal normal normal 12px/16px Nunito;
+    letter-spacing: 0px;
+    color: #B1B1B1;
+    opacity: 1;
+}
+
+.login-button {
+    top: 662px;
+    left: 1175px;
+    width: 389px;
+    height: 45px;
+    /* UI Properties */
+    background: var(--unnamed-color-4b9ce2) 0% 0% no-repeat padding-box;
+    background: #4B9CE2 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 1;
+    border: none;
+
+    /* UI Properties */
+    color: var(--unnamed-color-ffffff);
+    text-align: center;
+    font: normal normal bold 18px/24px Nunito;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.dont-have-account {
+    /* UI Properties */
+    color: var(--unnamed-color-525252);
+    text-align: center;
+    font: normal normal normal 15px/20px Nunito;
+    letter-spacing: 0px;
+    color: #525252;
+}
