@@ -5,8 +5,7 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
-        "react/react-in-jsx-scope: off"
+        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
