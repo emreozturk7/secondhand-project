@@ -13,6 +13,7 @@ import Toast from '../../components/Toast/Toast';
 function Login() {
 
   const [list, setList] = useState([]);
+  const [showToastMessage, setShowToast] = useState(true);
   let toastProperties = null;
 
   const showToast = () => {
@@ -23,6 +24,10 @@ function Login() {
       description: 'deneme',
       backgroundColor: '#FFE5E5'
     };
+
+    setInterval(() => {
+      setShowToast(!showToastMessage);
+    }, 50000);
 
     setList([toastProperties]);
 
@@ -56,9 +61,9 @@ function Login() {
 
                   <div onSubmit={handleSubmit}>
                     {
-                      errors != null ?
-                        <Toast toastList={list} position='bottom-rigth'></Toast>
-                        : null
+                      errors != null && showToastMessage &&
+
+                      <Toast toastList={list} position='bottom-rigth'>deneme</Toast>
                     }
                     <div className='sign-in-email-container'>
                       <div className='input-name'>Email</div>
@@ -70,7 +75,7 @@ function Login() {
                     </div>
                   </div>
                   <p className='forgot-password'>Şifremi Unuttum</p>
-                  <button className='login-button' onClick={()=> showToast('error')}>Giriş</button>
+                  <button className='login-button' onClick={() => showToast('error')}>Giriş</button>
                   <p className='dont-have-account'>Hesabın yok mu?
                     <Link to="/register">
                       <span className='register-router-button'> Üye Ol</span>
