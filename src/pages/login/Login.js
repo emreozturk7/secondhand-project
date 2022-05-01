@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable indent */
 import React, { useState } from 'react';
 import '../style/login-register.css';
 import LoginRegisterImage from '../../constants/images/login-register.png';
@@ -5,34 +8,11 @@ import SecondHandLogo from '../../constants/icons/secondHandLogo';
 import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import { LoginScheme } from '../../constants/schema/yupSchema';
-import Toast from '../../components/Toast/Toast';
-
-
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
-
-  const [list, setList] = useState([]);
-  const [showToastMessage, setShowToast] = useState(true);
-  let toastProperties = null;
-
-  const showToast = () => {
-
-    toastProperties = {
-      id: 1,
-      title: 'error',
-      description: 'deneme',
-      backgroundColor: '#FFE5E5'
-    };
-
-    setInterval(() => {
-      setShowToast(!showToastMessage);
-    }, 50000);
-
-    setList([toastProperties]);
-
-  };
-
+  const notify = () => toast.error('Error');
   return (
     <div className='login-container'>
       <img src={LoginRegisterImage} className='login-register-image' />
@@ -50,10 +30,10 @@ function Login() {
             email: '',
             password: '',
           }}
-          onSubmit={(auth) => {
-            console.log(auth);
-          }}
-          validationSchema={LoginScheme}
+            onSubmit={(auth) => {
+              console.log(auth);
+            }}
+            validationSchema={LoginScheme}
           >
             {
               ({ values, handleChange, handleSubmit, errors }) =>
@@ -61,9 +41,7 @@ function Login() {
 
                   <div onSubmit={handleSubmit}>
                     {
-                      errors != null && showToastMessage &&
-
-                      <Toast toastList={list} position='bottom-rigth'>deneme</Toast>
+                      errors != null && notify()
                     }
                     <div className='sign-in-email-container'>
                       <div className='input-name'>Email</div>
@@ -75,7 +53,7 @@ function Login() {
                     </div>
                   </div>
                   <p className='forgot-password'>Şifremi Unuttum</p>
-                  <button className='login-button' onClick={() => showToast('error')}>Giriş</button>
+                  <button className='login-button'>Giriş</button>
                   <p className='dont-have-account'>Hesabın yok mu?
                     <Link to="/register">
                       <span className='register-router-button'> Üye Ol</span>
