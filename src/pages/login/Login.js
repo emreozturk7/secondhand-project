@@ -1,18 +1,27 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/jsx-no-undef */
 /* eslint-disable indent */
-import React, { useState } from 'react';
+import React from 'react';
 import '../style/login-register.css';
 import LoginRegisterImage from '../../constants/images/login-register.png';
 import SecondHandLogo from '../../constants/icons/secondHandLogo';
 import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import { LoginScheme } from '../../constants/schema/yupSchema';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useAuth } from '../../contexts/AuthContext';
+
 
 function Login() {
-  const notify = () => toast.error('Error');
+  const { email, setE, password, setP } = useAuth();
+
+  const submit = e => {
+    e.preventDefault();
+
+    const data = {
+      email: email,
+      password: password,
+    };
+    console.log(data);
+  };
+
   return (
     <div className='login-container'>
       <img src={LoginRegisterImage} className='login-register-image' />
@@ -30,26 +39,20 @@ function Login() {
             email: '',
             password: '',
           }}
-            onSubmit={(auth) => {
-              console.log(auth);
-            }}
             validationSchema={LoginScheme}
           >
             {
-              ({ values, handleChange, handleSubmit, errors }) =>
-                <form className='sign-in-form'>
+              ({ handleSubmit }) =>
+                <form className='sign-in-form' onSubmit={submit}>
 
                   <div onSubmit={handleSubmit}>
-                    {
-                      errors != null && notify()
-                    }
                     <div className='sign-in-email-container'>
                       <div className='input-name'>Email</div>
-                      <input type="email" placeholder='Email@example.com' className='input-box' onChange={handleChange} value={values.email} />
+                      <input type="email" placeholder='Email@example.com' required id='email' className='input-box' onChange={e => setE(e.target.value)} />
                     </div>
                     <div className='sign-in-password-container'>
                       <div className='input-name'>Şifre</div>
-                      <input type="password" placeholder='Şifreni gir' className='input-box' onChange={handleChange} value={values.password} />
+                      <input type="password" placeholder='Şifreni gir' required id='password' className='input-box' onChange={e => setP(e.target.value)} />
                     </div>
                   </div>
                   <p className='forgot-password'>Şifremi Unuttum</p>
@@ -70,5 +73,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;
