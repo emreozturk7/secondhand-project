@@ -8,7 +8,7 @@ import { LoginScheme } from '../../constants/schema/yupSchema';
 import { useAuth } from '../../contexts/AuthContext';
 
 function Login() {
-  const { changeEmail, changePassword, submit } = useAuth();
+  const { changeEmail, changePassword, submitLogin } = useAuth();
 
   return (
     <div className='login-container'>
@@ -31,7 +31,7 @@ function Login() {
           >
             {
               ({ handleSubmit }) =>
-                <form className='sign-in-form' onSubmit={submit}>
+                <form className='sign-in-form' onSubmit={submitLogin}>
 
                   <div onSubmit={handleSubmit}>
                     <div className='sign-in-email-container'>

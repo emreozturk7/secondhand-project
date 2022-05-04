@@ -11,7 +11,7 @@ export const register = async (email, password) => {
       console.log('User profile', response.data.user);
       console.log('User token', response.data.jwt);
     })
-    .catch((error) =>{
+    .catch((error) => {
       console.log('An error occured:', error.response);
     });
 };
@@ -20,5 +20,10 @@ export const login = async (email, password) => {
   axios.post(URL.login, {
     identifier: email,
     password: password,
-  });
+  }).then((response) => {
+    console.log('User login successfully: ', response.data.jwt);
+  })
+    .catch((error) => {
+      console.log('An error occured: ', error.response);
+    });
 };
