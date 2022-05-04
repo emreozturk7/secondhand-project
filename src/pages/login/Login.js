@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import React from 'react';
 import '../style/login-register.css';
 import LoginRegisterImage from '../../constants/images/login-register.png';
@@ -8,19 +7,8 @@ import { Formik } from 'formik';
 import { LoginScheme } from '../../constants/schema/yupSchema';
 import { useAuth } from '../../contexts/AuthContext';
 
-
 function Login() {
-  const { email, setE, password, setP } = useAuth();
-
-  const submit = e => {
-    e.preventDefault();
-
-    const data = {
-      email: email,
-      password: password,
-    };
-    console.log(data);
-  };
+  const { changeEmail, changePassword, submit } = useAuth();
 
   return (
     <div className='login-container'>
@@ -39,7 +27,7 @@ function Login() {
             email: '',
             password: '',
           }}
-            validationSchema={LoginScheme}
+          validationSchema={LoginScheme}
           >
             {
               ({ handleSubmit }) =>
@@ -48,11 +36,11 @@ function Login() {
                   <div onSubmit={handleSubmit}>
                     <div className='sign-in-email-container'>
                       <div className='input-name'>Email</div>
-                      <input type="email" placeholder='Email@example.com' required id='email' className='input-box' onChange={e => setE(e.target.value)} />
+                      <input type="email" placeholder='Email@example.com' required id='email' className='input-box' onChange={e => changeEmail(e.target.value)} />
                     </div>
                     <div className='sign-in-password-container'>
                       <div className='input-name'>Şifre</div>
-                      <input type="password" placeholder='Şifreni gir' required id='password' className='input-box' onChange={e => setP(e.target.value)} />
+                      <input type="password" placeholder='Şifreni gir' required id='password' className='input-box' onChange={e => changePassword(e.target.value)} />
                     </div>
                   </div>
                   <p className='forgot-password'>Şifremi Unuttum</p>
@@ -73,3 +61,5 @@ function Login() {
     </div>
   );
 }
+
+export default Login;

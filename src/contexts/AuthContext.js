@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, createContext } from 'react';
 
-const AuthContext = React.createContext();
+const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
 
@@ -18,22 +17,20 @@ const AuthProvider = ({ children }) => {
     console.log(data);
   };
 
-  const setE = (e) => {
-    setEmail(e);
+  const changeEmail = (data) => {
+    setEmail(data);
   };
 
-  const setP = (e) => {
-    setPassword(e);
+  const changePassword = (data) => {
+    setPassword(data);
   };
 
   return (
     <AuthContext.Provider
       value={{
-        email,
-        password,
         submit,
-        setE,
-        setP,
+        changeEmail,
+        changePassword,
       }}
     >
       {children}
@@ -45,4 +42,4 @@ function useAuth() {
   return useContext(AuthContext);
 }
 
-export { AuthProvider, AuthContext, useAuth };
+export { AuthProvider, useAuth, AuthContext };
