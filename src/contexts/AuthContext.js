@@ -1,4 +1,4 @@
-import React, { useContext, useState, createContext } from 'react';
+import React, { useContext, useState, createContext} from 'react';
 import { login, register } from '../services/authService';
 
 const AuthContext = createContext();
@@ -8,7 +8,6 @@ const AuthProvider = ({ children }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLogged, setIsLogged] = useState(true);
-
 
   const submitLogin = e => {
     e.preventDefault();
