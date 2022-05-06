@@ -5,17 +5,19 @@
     align-items: center;
     padding: 1em;
 }
+
 .header-logo {
     margin: 0 10rem;
     width: 130px;
     height: 50px;
 }
+
 .header-btn {
     margin: 0 10rem;
-    text-align: end;   
+    text-align: end;
 }
 
-button {
+.button-type {
     white-space: nowrap;
     background-color: #F0F8FF;
     margin-left: 1em;
@@ -23,4 +25,5 @@ button {
     padding: 1em 1.5em;
     color: #4B9CE2;
     border-radius: 8px;
+    text-decoration: none;
 }

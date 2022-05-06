@@ -1,8 +1,12 @@
 import React from 'react';
+import Header from '../../components/Header/Header';
 
 function MyAccount() {
   return (
-    <div>MyAccount</div>
+    <>
+      <Header />
+      <div>MyAccount</div>
+    </>
   );
 }
 

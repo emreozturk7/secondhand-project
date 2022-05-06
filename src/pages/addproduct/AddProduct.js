@@ -1,8 +1,12 @@
 import React from 'react';
+import Header from '../../components/Header/Header';
 
 function AddProduct() {
   return (
-    <div>AddProduct</div>
+    <>
+      <Header/>
+      <div>AddProduct</div>
+    </>
   );
 }
 
