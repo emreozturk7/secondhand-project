@@ -1,4 +1,4 @@
-import React, { useContext, useState, createContext} from 'react';
+import React, { useContext, useState, createContext } from 'react';
 import { login, register } from '../services/authService';
 
 const AuthContext = createContext();
@@ -7,7 +7,6 @@ const AuthProvider = ({ children }) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLogged, setIsLogged] = useState(true);
 
   const submitLogin = e => {
     e.preventDefault();
@@ -17,7 +16,6 @@ const AuthProvider = ({ children }) => {
       password: password,
     };
     login(data.email, data.password);
-    setIsLogged(!isLogged);
   };
 
   const submitRegister = e => {
@@ -43,9 +41,10 @@ const AuthProvider = ({ children }) => {
       value={{
         submitLogin,
         submitRegister,
+        email,
+        password,
         changeEmail,
         changePassword,
-        isLogged,
       }}
     >
       {children}

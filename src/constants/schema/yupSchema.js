@@ -9,7 +9,7 @@ export const RegisterScheme = yup.object().shape({
     .string()
     .typeError('Her karakteri kullanamazsiniz')
     .min(8, 'Şifreniz 8 karakterden az olamaz')
-    .max(32, 'Şifreniz 32 karakterden fazla olamaz')
+    .max(20, 'Şifreniz 20 karakterden fazla olamaz')
     .required('Şifre alani zorunludur'),
 });
 
@@ -22,6 +22,6 @@ export const LoginScheme = yup.object().shape({
     .string()
     .typeError('Her karakteri kullanamazsiniz')
     .min(8, 'Şifreniz 8 karakterden az olamaz')
-    .max(32, 'Şifreniz 32 karakterden fazla olamaz')
+    .max(20, 'Şifreniz 20 karakterden fazla olamaz')
     .required('Şifre alani zorunludur'),
 });
