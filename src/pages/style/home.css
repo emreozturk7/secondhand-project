@@ -8,9 +8,20 @@
 .home-container {}
 
 
-img poster {
-    width: 100%;
-    height: 100%;
+.poster {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.poster-deneme {
+    width: 80%;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
 }
 
 .category-container ul {
@@ -23,23 +34,24 @@ img poster {
     cursor: pointer;
 }
 
-.product-info {
+.product-container {
     display: flex;
-    justify-content: space-between;
-}
-
-span first-child {
-    color: #4B9CE2;
-}
-
-.product-item {
-    background-color: #fff;
-    border-radius: .5rem;
-    margin: .5rem;
-    padding: .5rem;
-    display: grid;
     justify-content: center;
-    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    margin: 2.5%;
+}
+
+.products-card {}
+
+.card-images {
+    display: flex;
+    justify-content: center;
 }
 
 

@@ -37,47 +37,50 @@ function Home() {
   return (
     <>
       <Header />
-      <div id="home-container" >
-        <img src={Banner1} alt="" className='poster' />
-        <div className="category-container">
-          <ul>
-            {
-              menuItems.map(item => (
-                <li key={item}>{item} <hr /></li>
-              ))
-            }
-          </ul>
-        </div>
-        {
-          loading
-            ?
-            <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-            :
-            <div className="product-container">
+      <div className='home-wrapper'>
+        <div className='home-container'>
+          <div className='poster'>
+            <img src={Banner1} alt=""  className='poster-deneme'/>
+
+          </div>
+          <div className="category-container">
+            <ul>
               {
-                products.map(product => (
-                  <ProductCard key={product.id} item={product}></ProductCard>
+                menuItems.map(item => (
+                  <li key={item}>{item} <hr /></li>
                 ))
               }
-            </div>
-        }
+            </ul>
+          </div>
+          {
+            loading
+              ?
+              <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+              :
+              <div className="product-container">
+                {
+                  products.map(product => (
+                    <ProductCard key={product.id} product={product}></ProductCard>
+                  ))
+                }
+              </div>
+          }
+        </div>
       </div>
     </>
   );
 }
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({ product }) => {
   return (
-    <div className="container">
-      <div className="product-container">
-        <div className="product-card">
-          {
-            <figure>
-              <img className="card-images" alt={item.name} src={item.image} />
-              <figcaption>{item.name}</figcaption>
-            </figure>
-          }
-        </div>
+    <div className="products-container">
+      <div className="product-card">
+        {
+          <figure>
+            <img className="card-images" alt={product.name} src={'https://bootcamp.akbolat.net/' + product.image?.formats?.thumbnail?.url} />
+            <figcaption>{product.name}</figcaption>
+          </figure>
+        }
       </div>
     </div>
   );
