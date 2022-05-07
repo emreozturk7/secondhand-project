@@ -24,6 +24,7 @@ export const login = async (email, password) => {
   }).then((response) => {
     console.log('User login successfully: ', response.data.jwt);
     localStorage.setItem('token', document.cookie);
+
   })
     .catch((error) => {
       console.log('An error occured: ', error.response);
