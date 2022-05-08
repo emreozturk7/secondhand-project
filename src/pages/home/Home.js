@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import axios from '../../constants/axios';
 import '../style/home.css';
-import Banner1 from './Banner1.jpg';
-
+import Banner from './banner.png';
+import NoImage from './noimage.png';
 
 function Home() {
 
@@ -57,7 +57,7 @@ function Home() {
       <Header />
       <div className='home-wrapper'>
         <div className='poster'>
-          <img src={Banner1} alt="" className='poster-deneme' />
+          <img src={Banner} alt="" className='poster-deneme' />
 
         </div>
         <div className="category-container">
@@ -93,7 +93,13 @@ const ProductCard = ({ product }) => {
       {
         <>
           <div className='card-images-container'>
-            <img src={'https://bootcamp.akbolat.net/' + product.image?.formats?.medium?.url} />
+            {
+              product.image?.formats?.medium?.url === undefined
+                ?
+                <img src={NoImage} />
+                :
+                <img src={'https://bootcamp.akbolat.net/' + product.image?.formats?.medium?.url} />
+            }
           </div>
 
           <div className='card-info'>
