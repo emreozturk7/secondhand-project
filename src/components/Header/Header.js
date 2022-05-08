@@ -14,7 +14,7 @@ function Header() {
           <Link to="/"><img src={SecondHandLogo} alt="" /></Link>
         </div>
         {
-          localStorage.getItem('token')
+          localStorage.getItem('auth_token')
             ? <div className="header-btn">
               <Link to="/addproduct" className='button-type'><AddIcon /> Ürün Ekle</Link>
               <Link to="/myaccount" className='button-type'><PersonIcon /> Hesabım</Link>

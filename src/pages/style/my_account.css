@@ -1,0 +1,37 @@
+.email-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2rem 10rem 1rem 10rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    font-weight: 700;
+    justify-content: space-between;
+}
+
+.email-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 2.6rem;
+    margin-right: 1rem;
+    padding: 1.6rem 0;
+}
+
+.button-secondary {
+    margin-left: 2.6rem;
+    margin-right: 1rem;
+    white-space: nowrap;
+    background-color: #F77474;
+    margin-left: 1em;
+    border: none;
+    padding: 1em 1.5em;
+    color: #FFFFFF;
+    border-radius: 8px;
+    text-decoration: none;
+}

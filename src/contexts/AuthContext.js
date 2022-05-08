@@ -16,6 +16,7 @@ const AuthProvider = ({ children }) => {
       password: password,
     };
     login(data.email, data.password);
+    window.location.href = '/';
   };
 
   const submitRegister = e => {
@@ -26,6 +27,7 @@ const AuthProvider = ({ children }) => {
       password: password,
     };
     register(data.email, data.password);
+    window.location.href = '/';
   };
 
   const changeEmail = (data) => {
