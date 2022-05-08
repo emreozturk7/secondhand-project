@@ -25,37 +25,59 @@ function MyAccount() {
       </div>
 
       <div className="offers-tab">
+
         <Tabs defaultIndex={0}>
+
           <TabList>
             <Tab>Teklif Aldıklarım</Tab>
             <Tab>Teklif Verdiklerim</Tab>
           </TabList>
-          <TabPanel>
-            <div className="product-container">
-              <div className="product-card">
-                <div className="image">
-                  <img alt="itemimage" src=''></img>
-                </div>
-                <div className="top-info">
-                  <div className="product-title"></div>
-                  <div id="product-color">
-                    <p>
-                      <span>Renk: </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="product-price"> TL</div>
-              </div>
-            </div>
 
-          </TabPanel>
           <TabPanel>
-
+            <ReceiveCard />
           </TabPanel>
+
+          <TabPanel>
+            <GiveCard />
+          </TabPanel>
+
         </Tabs>
       </div>
     </>
   );
 }
+
+
+const ReceiveCard = () => {
+  return (
+    <div className="product-container">
+      <div className="product-card">
+        <div className="image">
+          <img alt="itemimage" src=''></img>
+        </div>
+        <div className="top-info">
+          <div className="product-title">Title</div>
+        </div>
+        <div className="product-price">Alınan Teklif: 119.90 TL</div>
+      </div>
+    </div>
+  );
+};
+
+const GiveCard = () => {
+  return (
+    <div className="product-container">
+      <div className="product-card">
+        <div className="image">
+          <img alt="itemimage" src=''></img>
+        </div>
+        <div className="top-info">
+          <div className="product-title">Title</div>
+        </div>
+        <div className="product-price">Alınan Teklif: 119.90 TL</div>
+      </div>
+    </div>
+  );
+};
 
 export default MyAccount;

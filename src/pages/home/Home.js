@@ -89,23 +89,21 @@ function Home() {
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="products-container">
-      <div className="products-card">
-        {
-          <>
-            <div className='card-images-container'>
-              <img className="card-images" src={'https://bootcamp.akbolat.net/' + product.image?.url} />
-            </div>
+    <div className="products-card">
+      {
+        <>
+          <div className='card-images-container'>
+            <img src={'https://bootcamp.akbolat.net/' + product.image?.formats?.medium?.url} />
+          </div>
 
-            <div className='card-info'>
-              <div>{product.brand}</div>
-              <div>{product.color}</div>
-            </div>
+          <div className='card-info'>
+            <div className='brand'>{product.brand}</div>
+            <div className='color'>Renk: <span>{product.color}</span></div>
+          </div>
 
-            <div>{product.price} TL</div>
-          </>
-        }
-      </div>
+          <div className='price'>{product.price} TL</div>
+        </>
+      }
     </div>
   );
 };

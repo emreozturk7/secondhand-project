@@ -1,6 +1,6 @@
 .header-wrapper {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    justify-content: space-between;
     background-color: #fff;
     align-items: center;
     padding: 1em;
