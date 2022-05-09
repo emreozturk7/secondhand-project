@@ -17,7 +17,7 @@ function Detail() {
     (
       async () => {
         setLoading(true);
-        await axios.get('https://bootcamp.akbolat.net/products/' + localStorage.getItem('product_id'))
+        await axios.get('https://bootcamp.akbolat.net/products/' + sessionStorage.getItem('product_id'))
           .then(res => {
             setLoading(false);
             setProduct(res.data);

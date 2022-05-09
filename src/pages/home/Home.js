@@ -14,6 +14,10 @@ function Home() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const [selected, setSelected] = useState('');
+
+  const [filterItem, setFilterItem] = useState([]);
+
   useEffect(() => {
     getProducts();
     getCategory();
@@ -50,23 +54,35 @@ function Home() {
     )();
   };
 
+  const selectCategory = (select) => {
+    setSelected(select);
+    filteredItem(select);
+  };
+
+  const filteredItem = (item) => {
+    const newItem = products.filter((newVal) => {
+      return newVal.category?.name === item;
+    });
+    setFilterItem(newItem);
+  };
 
   return (
     <>
       <Header />
       <div className='home-wrapper'>
         <div className='poster'>
-          <img src={Banner} alt="" className='poster-deneme' />
+          <img src={Banner} alt="" />
 
         </div>
-        <div className="category-container">
-          <ul>
+        <div className="category-wrapper">
+          <div className='category-container'>
+            <div className='category-name' onClick={() => setSelected('')}>Hepsi</div>
             {
               category.map((item, id) => (
-                <li key={id}>{item.name} <hr /></li>
+                <div key={id} className='category-name' onClick={() => selectCategory(item.name)}> {item.name} </div>
               ))
             }
-          </ul>
+          </div>
         </div>
         {
           loading
@@ -75,9 +91,15 @@ function Home() {
             :
             <div className="product-container">
               {
-                products.map(product => (
-                  <ProductCard key={product.id} product={product}></ProductCard>
-                ))
+                selected.length > 1
+                  ?
+                  filterItem.map(product => (
+                    <ProductCard key={product.id} product={product}></ProductCard>
+                  ))
+                  :
+                  products.map(product => (
+                    <ProductCard key={product.id} product={product}></ProductCard>
+                  ))
               }
             </div>
         }
@@ -88,7 +110,7 @@ function Home() {
 
 const ProductCard = ({ product }) => {
   return (
-    <Link to={{ pathname: 'detail' }} className={'link-container'} onClick={() => { localStorage.setItem('product_id', JSON.stringify(product.id)); }}>
+    <Link to={{ pathname: 'detail' }} className={'link-container'} onClick={() => { sessionStorage.setItem('product_id', JSON.stringify(product.id)); }}>
       <div className="products-card">
         {
           <>
