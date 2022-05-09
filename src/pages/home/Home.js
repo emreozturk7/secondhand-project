@@ -40,7 +40,6 @@ function Home() {
   const getCategory = () => {
     (
       async () => {
-
         await axios.get('https://bootcamp.akbolat.net/categories')
           .then(res => {
             setCategory(res.data);
@@ -89,7 +88,7 @@ function Home() {
 
 const ProductCard = ({ product }) => {
   return (
-    <Link to={'detail'}>
+    <Link to={{ pathname: 'detail' }} className={'link-container'} onClick={() => { localStorage.setItem('product_id', JSON.stringify(product.id)); }}>
       <div className="products-card">
         {
           <>
@@ -104,11 +103,11 @@ const ProductCard = ({ product }) => {
             </div>
 
             <div className='card-info'>
-              <div className='brand'>{product.brand}</div>
-              <div className='color'>Renk: <span>{product.color}</span></div>
+              <div className='home-brand'>{product.brand}</div>
+              <div className='home-color'>Renk: <span>{product.color}</span></div>
             </div>
 
-            <div className='price'>{product.price} TL</div>
+            <div className='home-price'>{product.price} TL</div>
           </>
         }
       </div>
