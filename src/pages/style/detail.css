@@ -1,0 +1,151 @@
+.detail-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5%;
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    top: 100px;
+    left: 220px;
+    width: 1480px;
+    height: 769px;
+
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 1;
+}
+
+.detail-image {
+    margin: 1%;
+}
+
+.detail-info-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5%;
+}
+
+.detail-title {
+    text-align: left;
+    font: normal normal normal 34px/23px Nunito;
+    letter-spacing: 0px;
+    color: #555555;
+    opacity: 1;
+    margin-left: 2.5%;
+}
+
+.main-container {
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2.5%;
+    margin-bottom: 1.5%;
+}
+
+.title {
+    color: var(--unnamed-color-525252);
+    text-align: left;
+    font: normal normal bold 15px/20px Nunito;
+    letter-spacing: 0px;
+    color: #525252;
+    opacity: 1;
+    margin-right: 2.5%;
+}
+
+.name {
+    color: var(--unnamed-color-525252);
+    text-align: left;
+    font: normal normal normal 15px/20px Nunito;
+    letter-spacing: 0px;
+    color: #525252;
+    opacity: 1;
+}
+
+.price {
+    color: var(--unnamed-color-525252);
+    text-align: left;
+    font: normal normal bold 25px/23px Nunito;
+    letter-spacing: 0px;
+    color: #525252;
+    opacity: 1;
+}
+
+.button-container {
+    margin-bottom: 5%;
+}
+
+.buy-button {
+    width: 235px;
+    height: 45px;
+
+    white-space: nowrap;
+    margin-left: 1em;
+    border: none;
+    color: #4B9CE2;
+    border-radius: 8px;
+    text-decoration: none;
+
+    background: var(--unnamed-color-4b9ce2) 0% 0% no-repeat padding-box;
+    background: #4B9CE2 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 1;
+
+    color: var(--unnamed-color-ffffff);
+    text-align: center;
+    font: normal normal bold 18px/24px Nunito;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.offer-button {
+    width: 235px;
+    height: 45px;
+
+    white-space: nowrap;
+    margin-left: 1em;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+
+    background: var(--unnamed-color-f0f8ff) 0% 0% no-repeat padding-box;
+    background: #F0F8FF 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 1;
+
+    color: var(--unnamed-color-4b9ce2);
+    text-align: center;
+    font: normal normal bold 18px/24px Nunito;
+    letter-spacing: 0px;
+    color: #4B9CE2;
+    opacity: 1;
+}
+
+.explanation {
+    color: var(--unnamed-color-525252);
+    text-align: left;
+    font: normal normal bold 18px/24px Nunito;
+    letter-spacing: 0px;
+    color: #525252;
+    opacity: 1;
+    margin-left: 2.5%;
+}
+
+.pharagraph {
+    text-align: left;
+    font: normal normal normal 15px/23px Nunito;
+    letter-spacing: 0px;
+    color: #555555;
+    opacity: 1;
+    margin-left: 2.5%;
+    margin-right: 30%;
+}
