@@ -1,6 +1,6 @@
 # Patika & Protein React Bootcamp Bitirme Projesi
 
-[Live demo link](secondhand-project-hiyd21upp-emreozturk7.vercel.app)
+[Live demo link](https://secondhand-project-hiyd21upp-emreozturk7.vercel.app/)
 
 ## Özet:
 
