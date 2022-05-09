@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import '../style/add-product.css';
 import Select from 'react-select';
+import { useAuth } from '../../contexts/AuthContext';
 
 function AddProduct() {
+
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const { categories, brands, colors, usingStatus } = useAuth();
   return (
     <>
       <Header />
@@ -20,12 +25,22 @@ function AddProduct() {
 
             <div className='input-container'>
               <div className='title'>Kategori</div>
-              ---
+              <div>{
+              }</div>
+              <Select
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={categories}
+              />
             </div>
 
             <div className='input-container'>
               <div className='title'>Marka</div>
-              <input type="text" />
+              <Select
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={brands}
+              />
             </div>
 
           </div>
@@ -34,12 +49,20 @@ function AddProduct() {
 
             <div className='input-container'>
               <div className='title'>Renk</div>
-              <input type="text" />
+              <Select
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={colors}
+              />
             </div>
 
             <div className='input-container'>
               <div className='title'>Kullanım Durumu</div>
-              <input type="text" />
+              <Select
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={usingStatus}
+              />
             </div>
 
           </div>

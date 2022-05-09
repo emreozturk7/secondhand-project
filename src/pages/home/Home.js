@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import axios from '../../constants/axios';
 import '../style/home.css';
@@ -16,7 +17,6 @@ function Home() {
   useEffect(() => {
     getProducts();
     getCategory();
-
   }, []);
 
   const getProducts = () => {
@@ -63,8 +63,8 @@ function Home() {
         <div className="category-container">
           <ul>
             {
-              category.map(item => (
-                <li key={item}>{item.name} <hr /></li>
+              category.map((item, id) => (
+                <li key={id}>{item.name} <hr /></li>
               ))
             }
           </ul>
@@ -89,28 +89,30 @@ function Home() {
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="products-card">
-      {
-        <>
-          <div className='card-images-container'>
-            {
-              product.image?.formats?.medium?.url === undefined
-                ?
-                <img src={NoImage} />
-                :
-                <img src={'https://bootcamp.akbolat.net/' + product.image?.formats?.medium?.url} />
-            }
-          </div>
+    <Link to={'detail'}>
+      <div className="products-card">
+        {
+          <>
+            <div className='card-images-container'>
+              {
+                product.image?.formats?.medium?.url === undefined
+                  ?
+                  <img src={NoImage} />
+                  :
+                  <img src={'https://bootcamp.akbolat.net/' + product.image?.formats?.medium?.url} />
+              }
+            </div>
 
-          <div className='card-info'>
-            <div className='brand'>{product.brand}</div>
-            <div className='color'>Renk: <span>{product.color}</span></div>
-          </div>
+            <div className='card-info'>
+              <div className='brand'>{product.brand}</div>
+              <div className='color'>Renk: <span>{product.color}</span></div>
+            </div>
 
-          <div className='price'>{product.price} TL</div>
-        </>
-      }
-    </div>
+            <div className='price'>{product.price} TL</div>
+          </>
+        }
+      </div>
+    </Link>
   );
 };
 
