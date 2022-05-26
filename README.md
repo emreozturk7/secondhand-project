@@ -34,8 +34,3 @@ React.js kullanılarak yazılan ikinci el alım satım yapmak için ürün ekley
 ### `npm install`
 ### `npm start`
 ### `Komutları sıra ile çalıştırılarak proje ayağa kaldırılır`
-
-## NOT:
-Proje şahsi olarak yaşadığım süre sıkıntısından dolayı tamamlanamamıştır. Lütfen sadece 1920 x 1080 pixelde deneyiniz.
-Proje yapılmaya devam etmektedir teslim tarihi ve saati dolduğu için yeni commitler kontrol bittikten sonra eklenecektir.
-Şahsi olarak kısıtlı olan süremde elimden geleni yapmaya çalıştım herşey için teşekkürler.
